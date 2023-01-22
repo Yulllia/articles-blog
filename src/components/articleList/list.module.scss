@@ -1,0 +1,13 @@
+.articleList {
+  margin: 25px 25px;
+  .cardContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-gap: 2.7rem;
+    margin: 45px auto;
+    max-width: 1290px;
+    @media screen and (max-width: 600px) {
+      display: unset;
+    }
+  }
+}

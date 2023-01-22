@@ -1,0 +1,35 @@
+:root {
+    --height: 200px;
+    --big-height: 400px;
+    --large-height: 550px;
+}
+$height: var(--height);
+$big-height: var(--big-height);
+$large-height: var(--large-height);
+
+// theme colors
+$grey: #363636;
+$black: #000000;
+$white: #ffffff;
+$light-white: #eaeaea;
+
+// font sizes
+$base-font-size: 14px;
+$medium-font-size: 16px;
+$medium-md-font-size: 18px;
+$medium-big-font-size: 24px;
+
+//position
+$margin: 0 auto;
+
+//line height
+$base-line-height: 24px;
+$small-line-height: 21px;
+$medium-line-height: 27px;
+$big-line-height: 29.26px;
+
+//font weight
+$bold-font-weight: 700;
+$medium-font-weight: 600;
+$small-font-weight: 400;
+

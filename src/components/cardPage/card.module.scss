@@ -1,0 +1,49 @@
+@use "src/utilities/variables";
+@use "src/utilities/mixins";
+
+.card {
+  @media screen and (max-width: 600px) {
+    margin-bottom: 25px;
+  }
+  .content {
+    padding: 25px;
+    height: 264px;
+    color: variables.$grey;
+    @media screen and (max-width: 600px) {
+      height: unset;
+    }
+    .date {
+      font-size: variables.$base-font-size;
+      line-height: variables.$small-line-height;
+      opacity: 0.6;
+      & > span {
+        padding-right: 9.33px;
+      }
+      & > span > svg {
+        width: 13.33px;
+        height: 12px;
+      }
+    }
+    .title {
+      font-size: variables.$medium-big-font-size;
+      line-height: variables.$big-line-height;
+      padding: 24px 0 20px 0;
+    }
+    .description {
+      font-size: variables.$medium-font-size;
+      min-height: 72px;
+      line-height: variables.$base-line-height;
+      margin-bottom: 20px;
+    }
+    .link {
+      text-decoration: none;
+      font-size: variables.$medium-font-size;
+      font-weight: variables.$bold-font-weight;
+      line-height: variables.$base-line-height;
+      color: #363636;
+      & > span > svg {
+        @include mixins.svg;
+      }
+    }
+  }
+}

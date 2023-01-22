@@ -1,0 +1,72 @@
+@use "src/utilities/variables";
+@use "src/utilities/mixins";
+
+.detailContainer {
+  position: relative;
+  .image {
+    object-fit: cover;
+  }
+  .description {
+    margin: variables.$margin;
+    width: 1140px;
+    max-height: 1001px;
+    padding: 35px 75px;
+    border: 1px solid variables.$light-white;
+    box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.05);
+    border-radius: 5px;
+    position: absolute;
+    background: variables.$white;
+    top: 50%;
+    transform: translate(-50%, 3%);
+    left: 50%;
+    @media screen and (max-width: 1024px) {
+      max-width: 1140px;
+      padding: 0;
+      width: 100%;
+    }
+    .title {
+      line-height: variables.$big-line-height;
+      font-size: variables.$base-line-height;
+      color: variables.$grey;
+      font-weight: variables.$small-font-weight;
+      @media screen and (max-width: 1024px) {
+        padding: 10px 20px;
+      }
+    }
+    .text {
+      padding: 50px 0 50px 0;
+      line-height: variables.$medium-line-height;
+      font-size: variables.$medium-md-font-size;
+      color: variables.$black;
+      @media screen and (max-width: 1024px) {
+        padding: 50px 20px 50px 20px;
+      }
+    }
+  }
+  .linkContainer {
+    margin: variables.$margin;
+    width: 985px;
+  }
+  .link {
+    position: absolute;
+    transform: translate(-50%, variables.$height);
+    text-decoration: none;
+    font-size: variables.$medium-font-size;
+    font-weight: variables.$bold-font-weight;
+    line-height: variables.$base-line-height;
+    @media screen and (max-width: 300px) {
+      transform: translate(10%, variables.$large-height);
+    }
+    @media screen and (min-width: 350px) {
+      transform: translate(10%, variables.$big-height);
+    }
+    @media screen and (min-width: 750px) {
+      transform: translate(10%, variables.$height);
+    }
+    color: variables.$grey;
+    & > span > svg {
+      padding-right: 6px;
+      @include mixins.svg;
+    }
+  }
+}

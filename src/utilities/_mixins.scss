@@ -1,0 +1,7 @@
+$width: 12px;
+$height: 10px;
+
+@mixin svg {
+  width: $width;
+  height: $height;
+}
