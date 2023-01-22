@@ -21,23 +21,20 @@ function Filter({ cardsData }: ArticleList) {
       setFilteredData(cardsData);
       return;
     }
-    const keywords = textToFind.split(" ").filter((card)=>card.length>0)
+    const keywords = textToFind.split(" ").filter((card) => card.length > 0);
     const title = [] as ICard[];
     const description = [] as ICard[];
     cardsData.filter((card) => {
-      if (
-        keywords.some((word) =>
+      return (
+        (keywords.some((word) =>
           card.title.substring(0, 50).toLowerCase().includes(word)
-        )
-      ) {
-        title.push(card);
-      } else if (
-        keywords.some((word) =>
-        card.summary.substring(0, 100).toLowerCase().includes(word)
-        )
-      ) {
-        description.push(card);
-      }
+        ) &&
+          title.push(card)) ||
+        (keywords.some((word) =>
+          card.summary.substring(0, 100).toLowerCase().includes(word)
+        ) &&
+          description.push(card))
+      );
     });
     setFilteredData([...title, ...description]);
   };
@@ -59,16 +56,16 @@ function Filter({ cardsData }: ArticleList) {
           className={styles.input}
           value={inputText}
           sx={{
-            fontSize: '16px',
-            lineHeight: '24px',
-            color: '#575757',
-            fontFamily: 'Montserrat sans-serif',
-            backgroundColor: 'white',
-            '&::before': {
-             borderBottom: 'unset'
+            fontSize: "16px",
+            lineHeight: "24px",
+            color: "#575757",
+            fontFamily: "Montserrat sans-serif",
+            backgroundColor: "white",
+            "&::before": {
+              borderBottom: "unset",
             },
-            '&:hover:not(.Mui-disabled, .Mui-error):before': {
-              borderBottom: 'unset' 
+            "&:hover:not(.Mui-disabled, .Mui-error):before": {
+              borderBottom: "unset",
             },
           }}
           onChange={handleFilter}

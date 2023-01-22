@@ -1,4 +1,3 @@
-import React from "react";
 import { Article } from "../../interfaces/interface";
 import { Link } from "react-router-dom";
 import Card from "@mui/material/Card";

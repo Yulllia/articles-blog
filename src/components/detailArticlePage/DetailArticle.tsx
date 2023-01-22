@@ -2,7 +2,7 @@ import { Link, useParams } from "react-router-dom";
 import styles from "./details.module.scss";
 import Box from "@mui/material/Box";
 import KeyboardBackspaceIcon from "@mui/icons-material/KeyboardBackspace";
-import useArticleDetails from "../../hooks/ger-article-details";
+import useArticleDetails from "../../hooks/get-article-details";
 
 function DetailArticle() {
   const { id } = useParams();

@@ -18,7 +18,7 @@ const useArticleDetails = (api: string) => {
     };
 
     loadArticles();
-  }, [api]);
+  }, [api, setLoading]);
 
   if(loading) {
     <CircularProgress  variant="determinate" value={25}/> 
